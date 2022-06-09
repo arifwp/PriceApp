@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">PriceApp</string>
+    <string name="add_product_title">Add Product</string>
+    <string name="btn_upload">Upload</string>
+    <string name="nama_produk_title">Product Name</string>
+    <string name="price_product">Price Product</string>
+    <string name="price_recommendation">Price Recommendation</string>
+    <string name="star">*</string>
+    <string name="title_recommendation1">Tupperware Bottle</string>
+    <string name="price_recommendation1">50.000</string>
+    <string name="title_recommendation2">Mini Bottle</string>
+    <string name="price_recommendation2">20.000</string>
+    <string name="title_recommendation3">Large Bottle</string>
+    <string name="price_recommendation3">100.000</string>
+    <string name="desc_title">Product Description</string>
+    <string name="btn_submit">Submit</string>
+    <string name="dashboard_seller">Dashboard Seller</string>
+    <string name="name_seller">Random Shop</string>
+    <string name="address_seller">Jln. Sleman, Yogyakarta</string>
+    <string name="price_min">Minimal Price</string>
+    <string name="price_max">Maximal Price</string>
+    <string name="cost_label">Cost</string>
+    <string name="dummy_category">T-Shirt</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_market">Market</string>
+    <string name="item">Item</string>
+    <string name="category">Category</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
+</resources>
