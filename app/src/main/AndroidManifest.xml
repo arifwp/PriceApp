@@ -10,9 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PriceApp">
         <activity
-            android:name=".AddProductActivity"
-            android:label="@string/add_product_title"
+            android:name=".UserActivity"
             android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PriceOptimizeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddProductActivity"
+            android:exported="false"
+            android:label="@string/add_product_title" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

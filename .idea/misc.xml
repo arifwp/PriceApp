@@ -3,8 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2985" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/drawable/ilustration_login.xml" value="0.2985" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/drawable/ilustration_upload.xml" value="0.2985" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/drawable/login_ilustration.xml" value="0.2985" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/layout/activity_add_product.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/layout/activity_price_optimize.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/layout/activity_register.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/layout/activity_user.xml" value="0.358695652173913" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/layout/fragment_item.xml" value="0.24954710144927536" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp/app/src/main/res/menu/option_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2985" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp2/app/src/main/res/drawable-v24/ic_profile.xml" value="0.2985" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PriceApp2/app/src/main/res/drawable-v24/rounded_button.xml" value="0.2985" />

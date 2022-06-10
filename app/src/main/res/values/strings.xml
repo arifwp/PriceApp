@@ -3,7 +3,7 @@
     <string name="add_product_title">Add Product</string>
     <string name="btn_upload">Upload</string>
     <string name="nama_produk_title">Product Name</string>
-    <string name="price_product">Price Product</string>
+    <string name="price_product">Product Price</string>
     <string name="price_recommendation">Price Recommendation</string>
     <string name="star">*</string>
     <string name="title_recommendation1">Tupperware Bottle</string>
@@ -27,9 +27,33 @@
     <string name="title_market">Market</string>
     <string name="item">Item</string>
     <string name="category">Category</string>
+    <string name="logout">Logout</string>
+    <string name="title_login">Hello, Lets Login!</string>
+    <string name="subtitle_login">Find out your best price with this new e-commerce platform and understand the highest potential selling price for your goods</string>
+    <string name="login_label">Login</string>
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="dont_have_any_account">Dont have any account?</string>
+    <string name="register_label">Register</string>
+    <string name="product_number_label">Product Number</string>
+    <string name="get_price">Get Price!</string>
+    <string name="title_register">Create your account</string>
+    <string name="subtitle_register">Are you new? Lets create an account for you</string>
+    <string name="email_label">Email</string>
+    <string name="already_have_account">Already have account?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_bottom_nav">BottomNavActivity</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
+
+
+    <string-array name="product_number">
+        <item>66543</item>
+        <item>1132</item>
+        <item>4425</item>
+        <item>2144</item>
+        <item>2176</item>
+        <item>0923</item>
+    </string-array>
 </resources>
