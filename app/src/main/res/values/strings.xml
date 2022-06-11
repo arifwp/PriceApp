@@ -41,6 +41,7 @@
     <string name="subtitle_register">Are you new? Lets create an account for you</string>
     <string name="email_label">Email</string>
     <string name="already_have_account">Already have account?</string>
+    <string name="login_as_user">Login as user</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_bottom_nav">BottomNavActivity</string>

@@ -27,8 +27,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         binding.fab.setOnClickListener {
-            val intent = Intent(getActivity(), AddProductActivity::class.java)
-            getActivity()?.startActivity(intent)
+
         }
 
     }
