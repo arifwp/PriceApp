@@ -17,9 +17,5 @@ class AddProductActivity : AppCompatActivity() {
 
         getSupportActionBar()?.hide()
 
-        binding.btnGetPrice.setOnClickListener {
-            startActivity(Intent(this, PriceOptimizeActivity::class.java))
-        }
-
     }
 }

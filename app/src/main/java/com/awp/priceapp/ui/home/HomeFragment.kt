@@ -3,6 +3,7 @@ package com.awp.priceapp.ui.home
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.awp.priceapp.AddProductActivity
 import com.awp.priceapp.R
@@ -16,6 +17,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+
         val binding = FragmentHomeBinding.bind(view)
         fragmentHome = binding
         val bundle = Bundle()
@@ -27,7 +30,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         binding.fab.setOnClickListener {
-
+            val intent = Intent (getActivity(), AddProductActivity::class.java)
+            getActivity()?.startActivity(intent)
         }
 
     }
