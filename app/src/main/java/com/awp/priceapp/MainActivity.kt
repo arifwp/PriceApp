@@ -37,20 +37,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.option_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.logout -> {
-                Intent(this, LoginActivity::class.java).also {
-                    startActivity(it)
-                }
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
 }
