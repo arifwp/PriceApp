@@ -6,7 +6,9 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.awp.priceapp.ui.home.CategoryFragment
 import com.awp.priceapp.ui.home.HomeFragment
+import com.awp.priceapp.ui.home.ItemFragment
 
 class SectionsPageAdapter(private val mContext: HomeFragment, fragment: FragmentManager, data: Bundle): FragmentPagerAdapter(fragment, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 

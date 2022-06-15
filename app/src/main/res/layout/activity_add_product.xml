@@ -141,7 +141,7 @@
             android:layout_marginHorizontal="32dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_rounded_corner"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="@+id/modal_label"
             app:layout_constraintStart_toStartOf="@+id/modal_label"
@@ -176,7 +176,7 @@
 
 
         <RelativeLayout
-            android:id="@+id/linear_box"
+            android:id="@+id/relative_box"
             android:layout_width="match_parent"
             android:layout_height="125dp"
             android:layout_marginTop="24dp"
@@ -252,7 +252,7 @@
             android:textColor="@color/dark_blue_500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linear_box" />
+            app:layout_constraintTop_toBottomOf="@+id/relative_box" />
 
         <EditText
             android:id="@+id/desc_product"
