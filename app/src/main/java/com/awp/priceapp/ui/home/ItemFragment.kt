@@ -33,29 +33,32 @@ class ItemFragment : Fragment() {
         productsAdapter = ProductsAdapter()
         productsAdapter.notifyDataSetChanged()
 
-        binding.apply {
-            rvItem.setHasFixedSize(true)
-            rvItem.layoutManager = LinearLayoutManager(activity)
-            rvItem.adapter = productsAdapter
-        }
+//        binding.apply {
+//            rvItem.setHasFixedSize(true)
+//            rvItem.layoutManager = LinearLayoutManager(activity)
+//            rvItem.adapter = productsAdapter
+//        }
+
+//        setRv()
+
+
 
 //        itemViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(ItemViewModel::class.java)
 
 
 //        val client = ApiConfig.getApiService().getAllPost()
-//        client.enqueue(object : Callback<ListProduct> {
-//            override fun onResponse(call: Call<ListProduct>, response: Response<ListProduct>) {
+//        client.enqueue(object : Callback<ProductResponse> {
+//            override fun onResponse(call: Call<ProductResponse>, response: Response<ProductResponse>) {
 //                if (response.isSuccessful){
-////                    val resource: ProductResponse? = response.body()
-////                    updatingData(resource!!.listProduct)
+//                    val resource: ProductResponse? = response.body()
+//                    updatingData(resource!!.data)
 //                    Log.e("sambungan", response.body().toString())
-////                    listFollowers.postValue(response.body())
 //                } else {
 //                    Log.e("sambunganelse", response.message())
 //                }
 //            }
 //
-//            override fun onFailure(call: Call<ListProduct>, t: Throwable) {
+//            override fun onFailure(call: Call<ProductResponse>, t: Throwable) {
 //                Log.d("error_getlist", t.message.toString())
 //            }
 //
@@ -63,30 +66,24 @@ class ItemFragment : Fragment() {
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    private fun setRv() {
-        val linearLayoutManager = LinearLayoutManager(requireContext())
-        productsAdapter = ProductsAdapter()
-
-        recyclerView = binding.rvItem
-        recyclerView.apply {
-            adapter = productsAdapter
-            layoutManager = linearLayoutManager
-        }
-    }
-
-
-    private fun updatingData(listProduct: List<ListProduct>) {
-        val recyclerViewState = recyclerView.layoutManager?.onSaveInstanceState()
-        productsAdapter.submitList(listProduct)
-
-        recyclerView.layoutManager?.onRestoreInstanceState(recyclerViewState)
-    }
-
+//    private fun setRv() {
+//        val linearLayoutManager = LinearLayoutManager(activity)
+//        productsAdapter = ProductsAdapter()
+//
+//        recyclerView = binding.rvItem
+//        recyclerView.apply {
+//            adapter = productsAdapter
+//            layoutManager = linearLayoutManager
+//        }
+//    }
+//
+//
+//    private fun updatingData(listProduct: List<ListProduct>) {
+//        val recyclerViewState = recyclerView.layoutManager?.onSaveInstanceState()
+//        productsAdapter.submitList(listProduct)
+//
+//        recyclerView.layoutManager?.onRestoreInstanceState(recyclerViewState)
+//    }
 
 
 }
