@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "650233047032",
+    "project_id": "priceapp-a19af",
+    "storage_bucket": "priceapp-a19af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650233047032:android:cfcdfe2671ce22dd26980d",
+        "android_client_info": {
+          "package_name": "com.awp.priceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650233047032-n9ukjglic7oihsrgdh0egmpjesk7fln3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-naLwHQOmyjOHJRUY5TB7cto4H51PBn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650233047032-n9ukjglic7oihsrgdh0egmpjesk7fln3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
