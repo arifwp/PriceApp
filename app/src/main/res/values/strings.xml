@@ -55,14 +55,6 @@
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
 
 
-    <string-array name="product_number">
-        <item>66543</item>
-        <item>1132</item>
-        <item>4425</item>
-        <item>2144</item>
-        <item>2176</item>
-        <item>0923</item>
-    </string-array>
     <string name="title_activity_home">HomeActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -72,5 +64,5 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-<!--    <string name="default_web_client_id">650233047032-n9ukjglic7oihsrgdh0egmpjesk7fln3.apps.googleusercontent.com</string>-->
+    <string name="web_client_id">650233047032-n9ukjglic7oihsrgdh0egmpjesk7fln3.apps.googleusercontent.com</string>
 </resources>
