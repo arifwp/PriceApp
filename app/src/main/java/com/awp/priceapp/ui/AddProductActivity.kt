@@ -1,4 +1,4 @@
-package com.awp.priceapp
+package com.awp.priceapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +11,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.awp.priceapp.api.ApiConfig
+import com.awp.priceapp.body.UploadBody
 import com.awp.priceapp.databinding.ActivityAddProductBinding
 import com.awp.priceapp.response.FileUploadResponse
 import retrofit2.Call
@@ -20,11 +21,10 @@ import java.io.File
 
 class AddProductActivity : AppCompatActivity() {
 
-    val product = arrayOf("Bottle", "Kemaja", "Celana", "Meja", "Kursi", "Meja Kerja", "Meja Belajar")
+    val product = arrayOf("Botol", "Kemaja", "Celana", "Meja", "Kursi", "Meja Kerja", "Meja Belajar")
 
     private lateinit var binding: ActivityAddProductBinding
     private var getFile: File? = null
-    private lateinit var addProductViewModel: AddProductViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +42,7 @@ class AddProductActivity : AppCompatActivity() {
 
         showHidePriceOptimizer()
 
+
         binding.btnUpload.setOnClickListener {
 
             addProduct(
@@ -54,6 +55,7 @@ class AddProductActivity : AppCompatActivity() {
             )
 
         }
+
 
     }
 
@@ -87,11 +89,11 @@ class AddProductActivity : AppCompatActivity() {
         })
     }
 
+
     private fun moveActivity() {
         startActivity(Intent(this, HomeActivity::class.java))
         finish()
     }
-
 
     private fun showHidePriceOptimizer() {
 
