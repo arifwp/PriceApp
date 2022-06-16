@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.awp.priceapp.AddProductActivity
+//import com.awp.priceapp.AddProductActivity
 import com.awp.priceapp.R
 import com.awp.priceapp.SectionsPageAdapter
 import com.awp.priceapp.adapter.ProductsAdapter
@@ -37,8 +37,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         binding.fab.setOnClickListener {
-            val intent = Intent(getActivity(), AddProductActivity::class.java)
-            getActivity()?.startActivity(intent)
+//            val intent = Intent(getActivity(), AddProductActivity::class.java)
+//            getActivity()?.startActivity(intent)
         }
 
     }

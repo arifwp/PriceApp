@@ -55,20 +55,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_camera" />
 
-
-<!--        <EditText-->
-<!--            android:id="@+id/product_name"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="32dp"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:background="@drawable/edit_text_rounded_corner"-->
-<!--            android:inputType="text"-->
-<!--            android:padding="10dp"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/product_name_title"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/product_name_title"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/product_name_title" />-->
-
         <AutoCompleteTextView
             android:id="@+id/auto_complete"
             android:layout_width="match_parent"
@@ -82,18 +68,11 @@
             app:layout_constraintStart_toStartOf="@+id/product_name_title"
             app:layout_constraintTop_toBottomOf="@+id/product_name_title" />
 
-
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/rv_product_name"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:layout_marginHorizontal="32dp"-->
-<!--            android:layout_marginTop="24dp"-->
-<!--            tools:listitem="@layout/layout_product_name"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            android:visibility="gone"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/product_name" />-->
+        <EditText
+            android:id="@+id/sampleName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/auto_complete" />
 
         <TextView
             android:id="@+id/category_label"
@@ -242,6 +221,32 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/stock_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="24dp"
+            android:text="Stock"
+            android:textStyle="bold"
+            android:textColor="@color/dark_blue_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relative_box" />
+
+        <EditText
+            android:id="@+id/stock_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_text_rounded_corner"
+            android:inputType="text"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/stock_title"
+            app:layout_constraintStart_toStartOf="@+id/stock_title"
+            app:layout_constraintTop_toBottomOf="@+id/stock_title" />
+
+        <TextView
             android:id="@+id/desc_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -252,10 +257,10 @@
             android:textColor="@color/dark_blue_500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relative_box" />
+            app:layout_constraintTop_toBottomOf="@+id/stock_field" />
 
         <EditText
-            android:id="@+id/desc_product"
+            android:id="@+id/desc_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
@@ -280,7 +285,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/desc_product" />
+            app:layout_constraintTop_toBottomOf="@+id/desc_field" />
 
 
 
