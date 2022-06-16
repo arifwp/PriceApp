@@ -32,6 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:maxWidth="80dp"
+        android:textAlignment="textEnd"
         android:textColor="@color/dark_blue_500"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tv_img_detail"
@@ -54,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textColor="@color/dark_blue_500"
+        android:textAlignment="textEnd"
         app:layout_constraintEnd_toEndOf="@+id/tv_category"
         app:layout_constraintTop_toBottomOf="@+id/tv_category"
         tools:text="32" />
@@ -63,12 +66,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:maxWidth="180dp"
         android:layout_marginTop="32dp"
         android:textColor="@color/dark_blue_500"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Dummy Name" />
+        tools:text="@tools:sample/lorem" />
 
     <TextView
         android:id="@+id/tv_product_price"
@@ -86,23 +90,12 @@
         android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:maxWidth="345dp"
         android:justificationMode="inter_word"
+        android:maxWidth="345dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintStart_toStartOf="@+id/tv_product_price"
-        app:layout_constraintTop_toBottomOf="@+id/tv_product_price"
-        tools:text="@tools:sample/lorem/random" />
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_edit"-->
-<!--        android:layout_width="170dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:backgroundTint="@android:color/holo_orange_dark"-->
-<!--        android:layout_marginBottom="32dp"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:text="Edit"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
+        app:layout_constraintTop_toBottomOf="@+id/tv_stock"
+        tools:text="@tools:sample/lorem" />
 
     <Button
         android:id="@+id/btn_delete"

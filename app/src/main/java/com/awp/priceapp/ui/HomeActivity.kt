@@ -59,7 +59,6 @@ class HomeActivity : AppCompatActivity() {
 
         productsAdapter = ProductsAdapter()
         productsAdapter.notifyDataSetChanged()
-        getSupportActionBar()?.hide()
 
 
         setRv()
