@@ -3,7 +3,6 @@ package com.awp.priceapp.ui
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
@@ -11,23 +10,25 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.awp.priceapp.R
 import com.awp.priceapp.api.ApiConfig
 import com.awp.priceapp.body.UploadBody
 import com.awp.priceapp.databinding.ActivityAddProductBinding
 import com.awp.priceapp.response.FileUploadResponse
+import com.awp.priceapp.response.GetNameResponse
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.File
 import java.io.IOException
 import java.util.*
 
+
 class AddProductActivity : AppCompatActivity() {
 
-    val product = arrayOf("Botol", "Kemaja", "Celana", "Meja", "Kursi", "Meja Kerja", "Meja Belajar")
+    var product = listOf("Botol", "Kemaja", "Celana", "Meja", "Kursi", "Meja Kerja", "Meja Belajar")
 
     private lateinit var binding: ActivityAddProductBinding
 
@@ -39,12 +40,41 @@ class AddProductActivity : AppCompatActivity() {
     lateinit var btn_choose_image: Button
     lateinit var btn_upload_image: Button
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddProductBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         getSupportActionBar()?.hide()
+
+
+        val client = ApiConfig.getApiService().searchName()
+
+        client.enqueue(object : Callback<GetNameResponse> {
+            override fun onResponse(
+                call: Call<GetNameResponse>,
+                response: Response<GetNameResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val resource = response.body()
+                    if (response.body() != null) {
+                        Toast.makeText(this@AddProductActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+//                        product = response.body()!!.data_product.map { it.ProductName.toString() }
+                        val newData  = response.body()!!.data_product
+                        Collections.replaceAll(product, "Botol", newData.toString())
+//                        Log.e("isi_list", response.body()!!.data_product.toString())
+                        Log.e("isi_list", product.toString())
+                    }
+                } else {
+                    Toast.makeText(this@AddProductActivity, response.message(), Toast.LENGTH_SHORT).show()
+                }
+            }
+            override fun onFailure(call: Call<GetNameResponse>, t: Throwable) {
+                Toast.makeText(this@AddProductActivity, "Gagal instance Retrofit", Toast.LENGTH_SHORT).show()
+            }
+
+        })
 
         val autocomp = binding.autoComplete
         val adapterArray = ArrayAdapter(applicationContext, android.R.layout.simple_spinner_dropdown_item, product)
@@ -56,16 +86,13 @@ class AddProductActivity : AppCompatActivity() {
         showHidePriceOptimizer()
 
         btn_choose_image = findViewById(R.id.btn_choose_image)
-        btn_upload_image = findViewById(R.id.btn_upload_image)
         imagePreview = findViewById(R.id.image_preview)
 
         firebaseStore = FirebaseStorage.getInstance()
         storageReference = FirebaseStorage.getInstance().reference
 
         btn_choose_image.setOnClickListener { launchGallery() }
-//        btn_upload_image.setOnClickListener {
-//
-//        }
+
 
 
         binding.btnUpload.setOnClickListener {
@@ -73,25 +100,27 @@ class AddProductActivity : AppCompatActivity() {
             if(filePath != null){
                 val ref = storageReference?.child("myImages/" + UUID.randomUUID().toString())
                 val uploadTask = ref?.putFile(filePath!!)
+                val fileName = "$ref.jpeg"
+
+                addProduct(
+                    binding.autoComplete.text.toString(),
+                    binding.categoryField.text.toString(),
+                    binding.priceProduct.text.toString().toInt(),
+                    binding.stockField.text.toString().toInt(),
+                    binding.modalField.text.toString().toInt(),
+                    binding.descField.text.toString(),
+                    fileName.toString()
+                )
 
             }else{
                 Toast.makeText(this, "Please Upload an Image", Toast.LENGTH_SHORT).show()
             }
 
-            addProduct(
-                binding.autoComplete.text.toString(),
-                binding.categoryField.text.toString(),
-                binding.priceProduct.text.toString().toInt(),
-                binding.stockField.text.toString().toInt(),
-                binding.modalField.text.toString().toInt(),
-                binding.descField.text.toString(),
-                binding.imagePreview.toString()
-            )
-
         }
 
 
     }
+
 
     private fun addProduct(name: String, category: String, price: Int, quantity: Int, cost: Int, description: String, photos: String){
 
@@ -156,7 +185,7 @@ class AddProductActivity : AppCompatActivity() {
 
     private fun launchGallery() {
         val intent = Intent()
-        intent.type = "image/*"
+        intent.type = "image/jpeg"
         intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
     }
