@@ -63,10 +63,20 @@ class AddProductActivity : AppCompatActivity() {
         storageReference = FirebaseStorage.getInstance().reference
 
         btn_choose_image.setOnClickListener { launchGallery() }
-        btn_upload_image.setOnClickListener { uploadImage() }
+//        btn_upload_image.setOnClickListener {
+//
+//        }
 
 
         binding.btnUpload.setOnClickListener {
+
+            if(filePath != null){
+                val ref = storageReference?.child("myImages/" + UUID.randomUUID().toString())
+                val uploadTask = ref?.putFile(filePath!!)
+
+            }else{
+                Toast.makeText(this, "Please Upload an Image", Toast.LENGTH_SHORT).show()
+            }
 
             addProduct(
                 binding.autoComplete.text.toString(),
@@ -74,7 +84,8 @@ class AddProductActivity : AppCompatActivity() {
                 binding.priceProduct.text.toString().toInt(),
                 binding.stockField.text.toString().toInt(),
                 binding.modalField.text.toString().toInt(),
-                binding.descField.text.toString()
+                binding.descField.text.toString(),
+                binding.imagePreview.toString()
             )
 
         }
@@ -82,9 +93,9 @@ class AddProductActivity : AppCompatActivity() {
 
     }
 
-    private fun addProduct(name: String, category: String, price: Int, quantity: Int, cost: Int, description: String){
+    private fun addProduct(name: String, category: String, price: Int, quantity: Int, cost: Int, description: String, photos: String){
 
-        val productInfo = UploadBody(name, category, price, quantity, cost, description)
+        val productInfo = UploadBody(name, category, price, quantity, cost, description, photos)
         val client = ApiConfig.getApiService().uploadImage(productInfo)
 
         client.enqueue(object : Callback<FileUploadResponse> {
@@ -167,14 +178,5 @@ class AddProductActivity : AppCompatActivity() {
         }
     }
 
-    private fun uploadImage(){
-        if(filePath != null){
-            val ref = storageReference?.child("myImages/" + UUID.randomUUID().toString())
-            val uploadTask = ref?.putFile(filePath!!)
-
-        }else{
-            Toast.makeText(this, "Please Upload an Image", Toast.LENGTH_SHORT).show()
-        }
-    }
 
 }
