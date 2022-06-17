@@ -1,5 +1,6 @@
 package com.awp.priceapp.response
 
+import com.awp.priceapp.body.DataResponse
 import com.google.gson.annotations.SerializedName
 
 data class GetNameResponse (

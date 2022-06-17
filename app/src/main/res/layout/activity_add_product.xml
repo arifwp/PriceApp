@@ -201,7 +201,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:layout_toEndOf="@+id/text_rata_rata"
-                android:text="400000" />
+                tools:text="400000" />
 
 
         </RelativeLayout>

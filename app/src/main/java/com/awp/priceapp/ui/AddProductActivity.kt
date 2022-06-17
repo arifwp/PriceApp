@@ -17,6 +17,7 @@ import com.awp.priceapp.body.UploadBody
 import com.awp.priceapp.databinding.ActivityAddProductBinding
 import com.awp.priceapp.response.FileUploadResponse
 import com.awp.priceapp.response.GetNameResponse
+import com.awp.priceapp.response.listName
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import retrofit2.Call
@@ -60,11 +61,25 @@ class AddProductActivity : AppCompatActivity() {
                     val resource = response.body()
                     if (response.body() != null) {
                         Toast.makeText(this@AddProductActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
-//                        product = response.body()!!.data_product.map { it.ProductName.toString() }
+
+                        val addProduct = response.body()!!.data_product.map { it.ProductName!! }
+
+
                         val newData  = response.body()!!.data_product
                         Collections.replaceAll(product, "Botol", newData.toString())
+
 //                        Log.e("isi_list", response.body()!!.data_product.toString())
-                        Log.e("isi_list", product.toString())
+
+
+                        val autocomp = binding.autoComplete
+                        val adapterArray = ArrayAdapter(applicationContext, android.R.layout.simple_spinner_dropdown_item, addProduct)
+                        autocomp.setAdapter(adapterArray)
+                        autocomp.setOnItemClickListener(AdapterView.OnItemClickListener { parent, view, position, id ->
+                            Toast.makeText(applicationContext, "clicked item = " + addProduct[position], Toast.LENGTH_SHORT).show()
+                        })
+
+
+                        Log.e("isi_list", newData.toString())
                     }
                 } else {
                     Toast.makeText(this@AddProductActivity, response.message(), Toast.LENGTH_SHORT).show()
@@ -76,12 +91,12 @@ class AddProductActivity : AppCompatActivity() {
 
         })
 
-        val autocomp = binding.autoComplete
-        val adapterArray = ArrayAdapter(applicationContext, android.R.layout.simple_spinner_dropdown_item, product)
-        autocomp.setAdapter(adapterArray)
-        autocomp.setOnItemClickListener(AdapterView.OnItemClickListener { parent, view, position, id ->
-            Toast.makeText(applicationContext, "clicked item = " + product[position], Toast.LENGTH_SHORT).show()
-        })
+//        val autocomp = binding.autoComplete
+//        val adapterArray = ArrayAdapter(applicationContext, android.R.layout.simple_spinner_dropdown_item, product)
+//        autocomp.setAdapter(adapterArray)
+//        autocomp.setOnItemClickListener(AdapterView.OnItemClickListener { parent, view, position, id ->
+//            Toast.makeText(applicationContext, "clicked item = " + product[position], Toast.LENGTH_SHORT).show()
+//        })
 
         showHidePriceOptimizer()
 
