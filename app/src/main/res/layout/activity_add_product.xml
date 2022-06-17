@@ -11,6 +11,38 @@
         android:layout_height="wrap_content"
         tools:context=".AddProduct">
 
+        <ImageView
+            android:id="@+id/image_preview"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="32dp"
+            tools:src="@tools:sample/avatars"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_choose_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Choose image"
+            android:layout_marginHorizontal="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_preview" />
+
+        <Button
+            android:id="@+id/btn_upload_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload image"
+            android:layout_marginHorizontal="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_choose_image" />
+
         <TextView
             android:id="@+id/product_name_title"
             android:layout_width="match_parent"
@@ -22,7 +54,7 @@
             android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_upload_image" />
 
         <AutoCompleteTextView
             android:id="@+id/auto_complete"
@@ -151,6 +183,7 @@
                 android:padding="8dp" />
 
             <Button
+                android:id="@+id/btn_terapkan"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title_price_recommendation"
@@ -174,11 +207,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="@string/dummy_price"
-                android:layout_toEndOf="@+id/text_rata_rata"
+                android:layout_below="@+id/price_recommendation_field"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
-                android:layout_below="@+id/price_recommendation_field" />
+                android:layout_toEndOf="@+id/text_rata_rata"
+                android:text="400000" />
 
 
         </RelativeLayout>
