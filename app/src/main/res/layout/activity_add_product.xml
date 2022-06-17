@@ -16,9 +16,8 @@
             android:id="@+id/image_preview"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:scaleType="centerCrop"
             android:layout_marginTop="32dp"
-            android:src="@drawable/user_icon"
+            android:src="@drawable/ilustration_upload"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
